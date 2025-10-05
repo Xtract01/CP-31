@@ -32,14 +32,21 @@ int main() {
     while (t--) {
         long long n;
         cin>>n;
-        long long a[n];
-        for(int i = 0 ; i< n ;i++){
-            cin>>a[i];
+        long long arr[n];
+        for(int i=0;i<n;i++){
+            cin>>arr[i];
         }
-        for(int i = 0 ; i< n ; i++){
-            cout<< n+1-a[i]<<" ";
+        int maxLen = 0;
+        int length = 0;
+        for(int i = 0;i<n;i++){
+            if(arr[i]==1){
+                maxLen = max(length,maxLen);
+                length = 0;
+            }
+            else length++;
         }
-        cout<<endl;
+        maxLen = max(length,maxLen);
+        cout<<maxLen<<endl;
     }
     return 0;
 }
