@@ -23,7 +23,27 @@ const double EPS = 1e-9;
 const double PI = acos(-1.0);
 
 void solve() {
-    // Write your solution for one test case here
+
+        int n;
+        cin>>n;
+ 
+        int m = (n * (n - 1)) / 2;
+ 
+        vector<int> v(m); //! array b
+        for(int i = 0; i < m; i++) cin>>v[i]; //? O(m)
+ 
+        sort(v.begin(), v.end()); //? O(m log m)
+ 
+        int x = n-1, i = 0;
+ 
+        while(x > 0) {
+            cout<<v[i]<<" ";
+ 
+            i += x;
+            x--;
+        } 
+ 
+        cout<<"1000000000\n";
 }
 
 int main() {
